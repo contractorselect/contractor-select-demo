@@ -6,6 +6,7 @@ import {
   ShieldCheck,
   ArrowRight,
   Eye,
+  type LucideIcon, 
 } from 'lucide-react';
 
 /**
@@ -171,7 +172,7 @@ function DemoCard({
   primaryCta,
   secondaryLinks,
 }: {
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: LucideIcon;
   iconColorClass: string;
   title: string;
   description: string;
