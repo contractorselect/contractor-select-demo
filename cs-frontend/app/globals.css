@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------------------------------- */
+/* Design tokens as CSS custom properties.                            */
+/* Mirrors `Design_System.md` — single source of truth in CSS.       */
+/* ----------------------------------------------------------------- */
+
+@layer base {
+  :root {
+    /* Brand primary (blue) */
+    --color-primary-50: 238 243 251;
+    --color-primary-100: 214 225 242;
+    --color-primary-200: 168 191 227;
+    --color-primary-300: 123 157 211;
+    --color-primary-500: 30 88 176;
+    --color-primary-700: 14 71 160;
+    --color-primary-900: 13 58 122;
+    --color-primary-950: 8 38 84;
+
+    /* Brand success (green) */
+    --color-success-50: 230 246 238;
+    --color-success-100: 194 235 211;
+    --color-success-300: 93 195 136;
+    --color-success-500: 26 168 94;
+    --color-success-700: 10 143 77;
+    --color-success-900: 4 102 58;
+
+    /* Neutrals */
+    --color-neutral-0: 255 255 255;
+    --color-neutral-50: 242 244 247;
+    --color-neutral-100: 229 232 237;
+    --color-neutral-200: 205 210 218;
+    --color-neutral-300: 170 177 188;
+    --color-neutral-400: 136 143 154;
+    --color-neutral-600: 111 115 120;
+    --color-neutral-700: 82 86 92;
+    --color-neutral-900: 26 29 33;
+
+    /* Semantic */
+    --color-warning-50: 254 246 231;
+    --color-warning-500: 199 124 14;
+    --color-warning-700: 142 88 8;
+    --color-danger-50: 252 235 234;
+    --color-danger-500: 185 28 28;
+    --color-danger-700: 127 19 19;
+  }
+
+  /* Typography defaults */
+  html {
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-700;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+    @apply text-neutral-900;
+  }
+
+  /* Tabular numerals where it counts (currency, IDs, totals) */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+
+  /* Focus rings — universal accessible focus state */
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-primary-500));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: rgb(var(--color-primary-100));
+    color: rgb(var(--color-primary-900));
+  }
+
+  /* Scrollbar polish — subtle, fits the brand */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--color-neutral-50));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-neutral-200));
+    border-radius: 999px;
+    border: 2px solid rgb(var(--color-neutral-50));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-neutral-300));
+  }
+}
+
+@layer components {
+  /* Locked content pattern — subtle texture, not greyed out */
+  .locked-pattern {
+    background-image:
+      linear-gradient(135deg, rgba(13, 58, 122, 0.025) 25%, transparent 25%),
+      linear-gradient(225deg, rgba(13, 58, 122, 0.025) 25%, transparent 25%),
+      linear-gradient(45deg, rgba(13, 58, 122, 0.025) 25%, transparent 25%),
+      linear-gradient(315deg, rgba(13, 58, 122, 0.025) 25%, transparent 25%);
+    background-position: 8px 0, 8px 0, 0 0, 0 0;
+    background-size: 16px 16px;
+    background-repeat: repeat;
+  }
+
+  /* The Critical-Rule unlock-transition: subtle green left-border accent */
+  .unlocked-accent {
+    @apply border-l-4 border-success-700;
+  }
+
+  /* Trust signal cluster — restrained, paired-look */
+  .trust-cluster {
+    @apply flex flex-wrap items-center gap-2;
+  }
+}
+
+@layer utilities {
+  /* Number that should be loud — payment totals etc. */
+  .text-money-xl {
+    @apply text-h1 font-bold tabular-nums tracking-tight;
+  }
+  .text-money-lg {
+    @apply text-h2 font-semibold tabular-nums;
+  }
+  .text-money {
+    @apply text-h4 font-semibold tabular-nums;
+  }
+
+  /* Pseudonymous handle — brand-defining typography choice */
+  .text-handle {
+    @apply font-mono font-semibold text-primary-900;
+    letter-spacing: 0.025em;
+  }
+}
