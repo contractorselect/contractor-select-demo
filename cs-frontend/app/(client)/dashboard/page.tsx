@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Plus, FileText, Award, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -70,8 +72,10 @@ export default function DashboardPage() {
         </div>
         <Button variant="primary" size="md" asChild className="gap-2">
           <Link href="/rfqs/new">
-            <Plus className="h-4 w-4" />
-            New RFQ
+            <span className="inline-flex items-center gap-2">
+              <Plus className="h-4 w-4" />
+              New RFQ
+            </span>
           </Link>
         </Button>
       </div>
@@ -145,58 +149,66 @@ export default function DashboardPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {MOCK_RFQS.map((rfq) => (
               <Card key={rfq.id} interactive>
-                <Link href={`/rfqs/${rfq.id}`} className="block">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-start justify-between gap-3 mb-2">
-                      <span className="text-overline uppercase font-sans text-neutral-400 tabular-nums">
-                        {rfq.id.toUpperCase()}
-                      </span>
-                      <StatusBadge type="rfq" state={rfq.state} size="sm" />
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <Link
+                      href={`/rfqs/${rfq.id}`}
+                      className="text-overline uppercase font-sans text-neutral-400 tabular-nums hover:text-neutral-700 transition-colors"
+                    >
+                      {rfq.id.toUpperCase()}
+                    </Link>
+                    <StatusBadge type="rfq" state={rfq.state} size="sm" />
+                  </div>
+                  <CardTitle className="line-clamp-2">
+                    <Link
+                      href={`/rfqs/${rfq.id}`}
+                      className="hover:text-primary-900 transition-colors"
+                    >
+                      {rfq.title}
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <dl className="grid grid-cols-2 gap-3 text-body-sm font-sans">
+                    <div>
+                      <dt className="text-caption uppercase tracking-wide text-neutral-400">
+                        Location
+                      </dt>
+                      <dd className="text-neutral-700 mt-0.5">
+                        {rfq.location}
+                      </dd>
                     </div>
-                    <CardTitle className="line-clamp-2">{rfq.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <dl className="grid grid-cols-2 gap-3 text-body-sm font-sans">
-                      <div>
-                        <dt className="text-caption uppercase tracking-wide text-neutral-400">
-                          Location
-                        </dt>
-                        <dd className="text-neutral-700 mt-0.5">
-                          {rfq.location}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="text-caption uppercase tracking-wide text-neutral-400">
-                          Bids received
-                        </dt>
-                        <dd className="text-neutral-700 mt-0.5 tabular-nums">
-                          {rfq.bidCount}
-                        </dd>
-                      </div>
-                      <div className="col-span-2">
-                        <dt className="text-caption uppercase tracking-wide text-neutral-400">
-                          Submitted
-                        </dt>
-                        <dd className="text-neutral-700 mt-0.5">
-                          {formatDate(rfq.submittedAt)}
-                        </dd>
-                      </div>
-                    </dl>
-                    {rfq.bidCount > 0 && (
-                      <Button
-                        variant="tertiary"
-                        size="sm"
-                        className="mt-4 -ml-2 gap-1"
-                        asChild
-                      >
-                        <Link href={`/rfqs/${rfq.id}/bids`}>
-                          Compare bids ({rfq.bidCount})
-                          <ArrowUpRight className="h-3 w-3" />
-                        </Link>
-                      </Button>
-                    )}
-                  </CardContent>
-                </Link>
+                    <div>
+                      <dt className="text-caption uppercase tracking-wide text-neutral-400">
+                        Bids received
+                      </dt>
+                      <dd className="text-neutral-700 mt-0.5 tabular-nums">
+                        {rfq.bidCount}
+                      </dd>
+                    </div>
+                    <div className="col-span-2">
+                      <dt className="text-caption uppercase tracking-wide text-neutral-400">
+                        Submitted
+                      </dt>
+                      <dd className="text-neutral-700 mt-0.5">
+                        {formatDate(rfq.submittedAt)}
+                      </dd>
+                    </div>
+                  </dl>
+                  {rfq.bidCount > 0 && (
+                    <Button
+                      variant="tertiary"
+                      size="sm"
+                      className="mt-4 -ml-2 gap-1"
+                      asChild
+                    >
+                      <Link href={`/rfqs/${rfq.id}/bids`}>
+                        Compare bids ({rfq.bidCount})
+                        <ArrowUpRight className="h-3 w-3" />
+                      </Link>
+                    </Button>
+                  )}
+                </CardContent>
               </Card>
             ))}
           </div>
