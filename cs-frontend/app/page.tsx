@@ -171,7 +171,7 @@ function DemoCard({
   primaryCta,
   secondaryLinks,
 }: {
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement> & { strokeWidth?: number | string }>;
   iconColorClass: string;
   title: string;
   description: string;
