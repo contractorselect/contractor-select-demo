@@ -13,6 +13,7 @@ import {
   ChevronLeft,
   Calendar,
   ShieldCheck,
+  type LucideIcon,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -373,7 +374,7 @@ function NextStep({
   href,
   disabled,
 }: {
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: LucideIcon;
   title: string;
   description: string;
   href?: string;
