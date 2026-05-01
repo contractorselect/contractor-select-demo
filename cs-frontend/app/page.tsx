@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  Building2,
-  HardHat,
-  ShieldCheck,
-  ArrowRight,
-  Eye,
-  type LucideIcon, 
-} from 'lucide-react';
-
+     Building2,
+     HardHat,
+     ShieldCheck,
+     ArrowRight,
+     Eye,
+     type LucideIcon,
+   } from 'lucide-react';
 /**
  * Demo landing page.
  *
