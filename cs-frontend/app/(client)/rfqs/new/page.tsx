@@ -149,7 +149,7 @@ export default function NewRfqPage() {
             Submit a new RFQ
           </h1>
           <p className="mt-1 text-body-sm font-sans text-neutral-400">
-            Tell us about your project. We'll qualify and match you with verified contractors.
+            Tell us about your project. We&apos;ll qualify and match you with verified contractors.
           </p>
         </div>
         <Button variant="tertiary" size="md" className="gap-2 flex-shrink-0">
@@ -346,7 +346,7 @@ function ScopeStep({
             Avoid identifying details
           </p>
           <p className="text-warning-700/90 mt-1">
-            Don't include building names, street addresses, or your company name in the
+            Don&apos;t include building names, street addresses, or your company name in the
             scope text. Our team reviews each RFQ before publishing — anything that
             identifies you to contractors will be flagged and returned for revision.
           </p>
@@ -586,7 +586,7 @@ function SiteVisitStep({
           <AlertCircle className="h-5 w-5 text-warning-700 flex-shrink-0 mt-0.5" />
           <p className="text-body-sm font-sans text-warning-700">
             Pre-bid site visits are not yet supported. They require coordination that
-            could leak your identity — we're building a managed flow that protects this.
+            could leak your identity — we&apos;re building a managed flow that protects this.
             For now, please choose post-award visits.
           </p>
         </div>

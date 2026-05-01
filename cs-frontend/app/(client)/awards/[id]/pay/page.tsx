@@ -120,7 +120,7 @@ export default function PaymentPage({
           Awaiting payment
         </h1>
         <p className="mt-2 text-body font-sans text-neutral-600 leading-relaxed">
-          You've awarded{' '}
+          You&apos;ve awarded{' '}
           <span className="text-handle font-semibold">
             {formatHandle(MOCK_AWARD.vendorHandle)}
           </span>{' '}

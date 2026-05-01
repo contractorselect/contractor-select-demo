@@ -67,7 +67,7 @@ export default function DashboardPage() {
             Dashboard
           </h1>
           <p className="mt-1 text-body-sm font-sans text-neutral-400">
-            Welcome back, Khalid. Here's what's active.
+            Welcome back, Khalid. Here&apos;s what&apos;s active.
           </p>
         </div>
         <Button variant="primary" size="md" asChild className="gap-2">

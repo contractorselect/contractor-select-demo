@@ -58,7 +58,7 @@ export function PaymentSuccess({
 
       {/* Headline */}
       <h2 className="text-h1 font-display font-semibold text-neutral-900">
-        You're connected.
+        You&apos;re connected.
       </h2>
       <p className="mt-2 text-body font-sans text-neutral-600 max-w-md mx-auto">
         Your payment was processed and{' '}

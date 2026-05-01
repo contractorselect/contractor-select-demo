@@ -57,7 +57,7 @@ export function AwardConfirmationModal({
         <div className="px-6 pt-6 pb-4">
           <DialogTitle>Award this bid?</DialogTitle>
           <DialogDescription className="mt-2">
-            You're awarding {rfqRef} to{' '}
+            You&apos;re awarding {rfqRef} to{' '}
             <span className="text-handle text-body font-semibold">
               {formatHandle(vendorHandle)}
             </span>
@@ -79,7 +79,7 @@ export function AwardConfirmationModal({
               Closes Brand Integration Validation §5.4 — reversibility messaging
               is the single most effective hesitation reducer per the CRO doc. */}
           <p className="mt-6 text-body-sm font-sans text-neutral-600 leading-relaxed">
-            Payment is due within 48 hours of award. The contractor's identity
+            Payment is due within 48 hours of award. The contractor&apos;s identity
             is revealed only after payment is confirmed.{' '}
             <span className="text-neutral-900">
               Awards can be reversed for a refund within 24 hours of payment.

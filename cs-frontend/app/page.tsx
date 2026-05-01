@@ -59,7 +59,7 @@ export default function DemoLandingPage() {
         </h1>
         <p className="mt-6 text-body-lg font-sans text-neutral-700 max-w-2xl mx-auto">
           Walk through the high-trust contractor marketplace. Submit an RFQ,
-          compare masked bids, simulate payment, and watch the contractor's
+          compare masked bids, simulate payment, and watch the contractor&apos;s
           identity reveal — exactly as the production flow will work.
         </p>
         <p className="mt-3 text-body-sm font-sans text-neutral-400">
@@ -134,7 +134,7 @@ export default function DemoLandingPage() {
 
         <div className="mt-12 rounded-md border border-neutral-100 bg-white px-6 py-5">
           <h3 className="text-h5 font-display font-semibold text-neutral-900">
-            What's real vs. simulated
+            What&apos;s real vs. simulated
           </h3>
           <dl className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
             <div>

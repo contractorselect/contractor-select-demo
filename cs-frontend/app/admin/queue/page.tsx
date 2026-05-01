@@ -127,7 +127,7 @@ export default function AdminQueuePage() {
                   How the simulation works
                 </p>
                 <p className="text-caption font-sans text-neutral-700 mt-1.5 leading-relaxed">
-                  Clicking "Simulate Payment" triggers the same{' '}
+                  Clicking &quot;Simulate Payment&quot; triggers the same{' '}
                   <code className="px-1 rounded bg-white border border-neutral-200 text-[11px]">
                     UnlockService.unlock()
                   </code>{' '}

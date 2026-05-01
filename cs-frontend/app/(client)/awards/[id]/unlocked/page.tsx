@@ -115,7 +115,7 @@ export default function UnlockedAwardPage({
                   Payment confirmed · Contractor unlocked
                 </p>
                 <h1 className="mt-1 text-h2 font-display font-semibold text-neutral-900">
-                  You're connected with{' '}
+                  You&apos;re connected with{' '}
                   <span className="text-success-700">
                     {MOCK_REVEALED_CONTRACTOR.legalName}
                   </span>
@@ -338,7 +338,7 @@ export default function UnlockedAwardPage({
                     </p>
                     <p className="text-caption font-sans text-neutral-700 mt-1">
                       Payment is held until you confirm kickoff. If the
-                      contractor doesn't deliver, contact our team for refund
+                      contractor doesn&apos;t deliver, contact our team for refund
                       mediation.
                     </p>
                   </div>

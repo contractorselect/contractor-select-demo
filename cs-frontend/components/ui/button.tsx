@@ -59,9 +59,22 @@ export interface ButtonProps
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, loading = false, children, disabled, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
+    if (asChild) {
+      // Radix Slot requires exactly one React child element. We cannot add
+      // a sibling loading spinner here — callers use asChild for Link
+      // wrappers that don't show loading state.
+      return (
+        <Slot
+          className={cn(buttonVariants({ variant, size }), className)}
+          ref={ref}
+          {...props}
+        >
+          {children}
+        </Slot>
+      );
+    }
     return (
-      <Comp
+      <button
         className={cn(buttonVariants({ variant, size }), className)}
         ref={ref}
         disabled={disabled || loading}
@@ -90,7 +103,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           </svg>
         )}
         {children}
-      </Comp>
+      </button>
     );
   },
 );

@@ -441,7 +441,7 @@ function SubmittedView() {
         </h1>
         <p className="mt-3 text-body font-sans text-neutral-700 leading-relaxed">
           Our compliance team will review your documents within 1–2 business
-          days. We'll email you when your account is approved and you're ready
+          days. We&apos;ll email you when your account is approved and you&apos;re ready
           to receive bid invitations.
         </p>
         <p className="mt-3 text-body-sm font-sans text-neutral-400">
