@@ -373,7 +373,7 @@ function NextStep({
   href,
   disabled,
 }: {
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement> & { strokeWidth?: number | string }>;
   title: string;
   description: string;
   href?: string;
