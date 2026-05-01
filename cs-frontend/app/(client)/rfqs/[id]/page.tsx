@@ -75,8 +75,10 @@ export default function RfqDetailPage({ params }: { params: { id: string } }) {
         {MOCK_RFQ.bidCount > 0 && (
           <Button variant="primary" size="md" asChild className="gap-2">
             <Link href={`/rfqs/${params.id}/bids`}>
-              Compare bids ({MOCK_RFQ.bidCount})
-              <ArrowUpRight className="h-4 w-4" />
+              <span className="inline-flex items-center gap-2">
+                Compare bids ({MOCK_RFQ.bidCount})
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
             </Link>
           </Button>
         )}

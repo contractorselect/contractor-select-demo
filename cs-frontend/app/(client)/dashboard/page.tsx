@@ -203,8 +203,10 @@ export default function DashboardPage() {
                       asChild
                     >
                       <Link href={`/rfqs/${rfq.id}/bids`}>
-                        Compare bids ({rfq.bidCount})
-                        <ArrowUpRight className="h-3 w-3" />
+                        <span className="inline-flex items-center gap-1">
+                          Compare bids ({rfq.bidCount})
+                          <ArrowUpRight className="h-3 w-3" />
+                        </span>
                       </Link>
                     </Button>
                   )}
