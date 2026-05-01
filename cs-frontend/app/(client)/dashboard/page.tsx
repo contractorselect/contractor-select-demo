@@ -1,5 +1,5 @@
 'use client';
-
+export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import { Plus, FileText, Award, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
